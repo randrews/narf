@@ -1,5 +1,7 @@
 require 'narf'
 
+# To run the example, just do ruby example.rb (from the same directory as this file)
+
 class Example
   def add a, b
     {:sum => a.to_f + b.to_f}
