@@ -1,0 +1,42 @@
+%html
+  %head
+    %title="Example"
+
+  %body
+
+    %h1="Narf Example"
+
+    %p
+      %b="Files:"
+      %br/
+      %a{:href=>"/files/foo.txt"}="/files/foo.txt"
+
+    %p
+      %b="Templates:"
+      %br/
+      %a{:href=>"/foo?a=bar"}="/foo"
+      points to templates/foo.haml
+      %br/
+      (Note that templates can receive URL parameters and use them)
+
+    %p
+      %b="Classes:"
+      %br/
+      Paths get automatically bound to class methods
+      %ul
+        %li
+          %a{:href=>"/example/wisdom"}="Method that takes no parameters"
+
+        %li
+          %a{:href=>"/example/add/3/5"}="Method that takes two parameters, in the path"
+
+        %li
+          %a{:href=>"/example/frequency?string=hello%20world"}="Method that takes one parameter, as a URL query string"
+
+        %li
+          %a{:href=>"/example/echo/foo"}="Method that takes one parameter, given a path element"
+
+        %li
+          %a{:href=>"/example/echo?point[x]=3&point[y]=8"}="Method that takes one parameter, given a URL query string"
+
+      All responses are in JSON. Classes are meant to be called over AJAX, not render templates.

@@ -1,0 +1,11 @@
+%html
+  %head
+    %title="Foo"
+
+  %body
+    %h1="Foo"
+
+    %p
+      You sent in
+      %span#a=(a rescue 'nil').inspect
+      as 'a'
